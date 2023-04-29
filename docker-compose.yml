@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  nextjs:
+    build:
+      context: ./docker/nextjs
+    command: node_modules/.bin/next dev
+    volumes:
+      - ./docker/nextjs/src:/home/node
+      - /home/node/node_modules
+    ports:
+      - "3000:3000"
