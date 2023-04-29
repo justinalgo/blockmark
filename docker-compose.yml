@@ -5,7 +5,7 @@ services:
       context: ./docker/nextjs
     command: node_modules/.bin/next dev
     volumes:
-      - ./docker/nextjs/src:/home/node
+      - ./docker/nextjs/src:/home/node:rw
       - /home/node/node_modules
     ports:
       - "3000:3000"
