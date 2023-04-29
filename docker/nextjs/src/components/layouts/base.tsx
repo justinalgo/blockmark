@@ -1,6 +1,9 @@
 import * as React from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Inter } from 'next/font/google'
+
+const inter = Inter({ subsets: ['latin'] })
 
 const user = {
   name: 'Tom Cook',
@@ -25,11 +28,15 @@ type Props = {
   children?: React.ReactNode
 }
 
+function classNames(...classes: string[]) {
+  return classes.filter(Boolean).join(' ')
+}
+
 
 const BaseLayout = ({ children }: Props) => {
   return (
     <>
-      <div className="min-h-full">
+      <div className={`min-h-full ${inter.className}`}>
         <div className="bg-gray-800 pb-32">
           <Disclosure as="nav" className="bg-gray-800">
             {({ open }: { open: boolean }) => (
@@ -84,7 +91,7 @@ const BaseLayout = ({ children }: Props) => {
                               </Menu.Button>
                             </div>
                             <Transition
-                              as={Fragment}
+                              as={React.Fragment}
                               enter="transition ease-out duration-100"
                               enterFrom="transform opacity-0 scale-95"
                               enterTo="transform opacity-100 scale-100"
@@ -187,7 +194,9 @@ const BaseLayout = ({ children }: Props) => {
         </div>
 
         <main className="-mt-32">
-          <div className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">{ children }</div>
+          <div className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+            <div className="bg-white rounded-lg px-5 py-6 shadow sm:px-6">{ children }</div>
+          </div>
         </main>
       </div>
     </>
