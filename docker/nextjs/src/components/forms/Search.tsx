@@ -38,7 +38,7 @@ const Search = () => {
           </div>
           <label htmlFor="input" className="sr-only">Search</label>
           <Field id="input" 
-            className="w-full px-3 ring-indigo-600 outline-indigo-600"
+            className="w-full px-3 outline-indigo-600 border border-solid border-gray-300 rounded-md shadow-sm"
             name="input" 
             placeholder="Search by Address, Txn Hash, Block, Token or ENS name" />
 
