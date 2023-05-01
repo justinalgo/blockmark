@@ -1,7 +1,9 @@
+import Search from "@/components/forms/Search";
+
 export default function Home() {
   return (
     <div>
-      <h1>Test</h1>
+      <Search />
     </div>
   )
 }

@@ -9,14 +9,14 @@ import { publicProvider } from 'wagmi/providers/public'
 const { chains, provider } = configureChains(
   [mainnet, polygon, optimism, arbitrum, avalanche],
   [
-    alchemyProvider({ apiKey: process?.env?.ALCHEMY_ID ?? '' }),
+    alchemyProvider({ apiKey: process?.env?.NEXT_PUBLIC_ALCHEMY_API_KEY ?? '' }),
     publicProvider()
   ]
 )
 
 const { connectors } = getDefaultWallets({
   appName: 'Blockmark',
-  projectId: process.env.WALLET_CONNECT_ID,
+  projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_ID,
   chains
 })
 
